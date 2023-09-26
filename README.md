@@ -1,9 +1,10 @@
 
 Goals:
-	- ReactJS class-to-hooks conversion 
+	
 	- Lifecycle methods as hooks 
 		- useEffect and lifecycle methods 
 	- State via hooks 
+	- ReactJS class-to-hooks conversion 
 	- BusinessCard component via hooks & props 
 
 # Getting Started with Create React App
