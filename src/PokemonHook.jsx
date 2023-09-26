@@ -12,10 +12,13 @@ export default function PokemonHook(){
 	// Don't do setState in top level of function 
 	// setPokemon("whatever we want");
 
+	// componentDidMount
 	// runs at the start or on the first render of this component
 	// useEffect((), []) is equivalent to componentDidMount
 	// because the dependency array is empty 
 	useEffect(() => {
+		// setPokemon({name:"Pikachu"});
+
 
 		// async operations and promises must be executed inside
 		// a new async block/scope within the useEffect callback 
@@ -29,11 +32,30 @@ export default function PokemonHook(){
 		fetchData();
 	}, []);
 
+
+	// componentDidUpdate 
+	useEffect(() => {
+		console.log("pokemon was updated");
+	}, [pokemon]);
+
+
+	// componentDidUnMount
+	useEffect(() => {
+
+		return (() => {
+			console.log("PokemonHook going away now...");
+		});
+	}, []);
+
+
+
+
 	function someFunction() {
 		console.log("blah blah")
 	}
 
 	if (pokemon.name){
+		console.log("yes data to show");
 		return (
 			<div>
 				<h1>{someExampleState}</h1>
@@ -41,6 +63,7 @@ export default function PokemonHook(){
 			</div>
 		)
 	} else {
+		console.log("no data to show");
 		return (
 			<div>No data to show...</div>
 		)
